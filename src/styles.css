@@ -32,8 +32,43 @@ button {
   font-weight: bold;
   font-size: 14px;
 }
+.delete{
+  background: #c44a4a;
+}
+
+.like{
+  background: #e84c4c
+}
 
 div li button {
   margin: 0 15px;
   background: #ca4949;
+}
+
+.container{
+  width: 60%;
+  margin:0 auto;
+}
+.containerCard {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  border-color: red;
+}
+
+.containerCard .techs {
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  padding: 5px 15px;
+  color: white;
+  font-weight: 100;
+}
+
+.containerCard .likes{
+  margin-left: 5px;
+  font-size: 13px;
 }

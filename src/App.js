@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Api from './services/api';
+import { FaThumbsUp } from 'react-icons/fa'
+import { IconContext } from 'react-icons';
 
 import "./styles.css";
 
-function App() {
+const App = () => {
   const [repositories, setRepository] = useState([])
 
   useEffect(() => {
@@ -11,6 +13,7 @@ function App() {
       setRepository(res.data)
     })
   }, [])
+
   async function handleAddRepository() {
     const response = await Api.post('repositories', {
       title: `New Repository ${Date.now()}`,
@@ -26,22 +29,34 @@ function App() {
   }
 
   async function handleRemoveRepository(id) {
-    const response = await Api.delete(`repositories/${id}`);
+    await Api.delete(`repositories/${id}`);
     const listRepository = repositories.filter(repo => repo.id !== id);
     setRepository(listRepository);
+  }
 
-
+  async function handleLike(id) {
+    const response = await Api.post(`repositories/${id}/like`);
+    const list = repositories.map(re => re.id === id ? response.data : re)
+    setRepository(list)
   }
 
   return (
-    <div>
+    <div className="container" >
       <ul data-testid="repository-list">
-
         {repositories.map(rep => (
-
-          <li key={rep.id}> {rep.title}
-            <button onClick={() => handleRemoveRepository(rep.id)}>
+          <li className="containerCard" key={rep.id}> {rep.title}
+            {rep.techs.map(tech => <span className="techs" key={tech}>{tech}</span>)}
+            <span className="likes">
+              {rep.likes}
+              <IconContext.Provider value={{ color: "#4CAF50" }}>
+                <FaThumbsUp />
+              </IconContext.Provider>
+            </span>
+            <button className="delete" onClick={() => handleRemoveRepository(rep.id)}>
               Remover
+          </button>
+            <button className="like" onClick={() => handleLike(rep.id)}>
+              Curtir
           </button>
           </li>
         ))}
