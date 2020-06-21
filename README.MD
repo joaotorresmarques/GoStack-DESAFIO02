@@ -24,7 +24,7 @@ Executar `yarn test` a fim de executar os testes automatizados
 
 - [x] Utilização da lib react-icons
 - [x] Funcionalidade de curtir o repositório
-= [x] Mostrar as tecnologias cadastradas
+- [x] Mostrar as tecnologias cadastradas
 
 <p align="center">
 Feito com 💛 por João Marcos
