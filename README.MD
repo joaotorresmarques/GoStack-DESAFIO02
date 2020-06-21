@@ -10,17 +10,15 @@
 Este repositório contem o consumo da API em [NODEJS](https://github.com/joaotorresmarques/GoStack-DESAFIO01) com REACT JS.
 
 ### 📺 Prévia
-![previa](previareadme.gif)
+![previa](gif1.gif)
 
 ### ⚙️ Rodando o desafio
-
 Primeiramente executar `yarn` para instalar as dependências e após, executar `yarn start` para iniciar o projeto. (Este repositorio faz consumo de API, necessariamente precisa estar com ela rodando)
-![dev](https://i.ibb.co/Npr8WFP/1.jpg)
+![dev](https://i.ibb.co/LJZDLLT/1.jpg)
 
 ### 🧪 Testes
-
 Executar `yarn test` a fim de executar os testes automatizados
-![test](https://i.ibb.co/ctzN2GJ/2.jpg)
+![test](https://i.ibb.co/GMqjxZ3/2.jpg)
 
 ### 🍆 Extras
 
